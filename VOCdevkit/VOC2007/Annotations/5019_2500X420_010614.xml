@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>5019_2500X420_010614.JPG</filename>
+	<path>F:\VOC2007\JPEGImages\5019_2500X420_010614.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>220</width>
+		<height>220</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>jueyuanzi</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>53</xmin>
+			<ymin>4</ymin>
+			<xmax>218</xmax>
+			<ymax>207</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>2481_3760X240_06620.JPG</filename>
+	<path>F:\VOC2007\JPEGImages\2481_3760X240_06620.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>200</width>
+		<height>200</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>jinju</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>106</xmin>
+			<ymin>93</ymin>
+			<xmax>200</xmax>
+			<ymax>157</ymax>
+		</bndbox>
+	</object>
+</annotation>
