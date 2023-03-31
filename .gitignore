@@ -83,6 +83,8 @@ parts/
 sdist/
 var/
 wheels/
+VOCdevkit1/
+VOCdevkit/
 *.egg-info/
 wandb/
 .installed.cfg

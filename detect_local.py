@@ -8,16 +8,14 @@ import numpy as np
 import torch.backends.cudnn as cudnn
 from numpy import random
 #from PyQt5.uic.properties import QtGui
-from pyqt5_plugins.examplebutton import QtWidgets
+
 from PyQt5.QtGui import *
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 from ui.detect_ui import Ui_MainWindow # 导入detect_ui的界面
-
 from models.experimental import attempt_load
 from utils.datasets import letterbox
 #from utils.plots import plot_one_box2
-from utils.plots import plot_one_box
+#from utils.plots import plot_one_box
 
 from utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
     scale_coords, xyxy2xywh, strip_optimizer, set_logging, increment_path
@@ -138,10 +136,10 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
                         label = '%s %.2f' % (self.names[int(cls)], conf)
                         name_list.append(self.names[int(cls)])
                         single_info = plot_one_box2(xyxy, showimg, label=label, color=self.colors[int(cls)],
-                                                    line_thickness=3)#改为3
+                                                    line_thickness=2)#改为3
                         #plot_one_box(xyxy, showimg, label=label, color=colors[int(cls)], line_thickness=3)
-                        print("single_info",single_info)
-                        print("info_show", info_show)
+
+
                         info_show = info_show + single_info + "\n"
         return info_show
 
@@ -163,8 +161,8 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
                 #jpg = QtGui.QPixmap(img_name).scaled(self.label_old.width(), self.label_old.height())
                 #print("jpg:", jpg)
                 #self.label_old.setPixmap(img)
-                self.ui.label_old.setPixmap(QPixmap(img_name))
-                self.ui.label_old.setScaledContents(True)  # 设置图像自适应界面大小
+                #self.ui.label_old.setPixmap(QPixmap(img_name))
+                #self.ui.label_old.setScaledContents(True)  # 设置图像自适应界面大小
 
                 info_show = self.detect(name_list, img)
                 print("info_show", info_show)
