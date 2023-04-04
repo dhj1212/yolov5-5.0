@@ -14,8 +14,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from ui.detect_ui import Ui_MainWindow # 导入detect_ui的界面
 from models.experimental import attempt_load
 from utils.datasets import letterbox
-#from utils.plots import plot_one_box2
-#from utils.plots import plot_one_box
 
 from utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
     scale_coords, xyxy2xywh, strip_optimizer, set_logging, increment_path
@@ -136,7 +134,7 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
                         label = '%s %.2f' % (self.names[int(cls)], conf)
                         name_list.append(self.names[int(cls)])
                         single_info = plot_one_box2(xyxy, showimg, label=label, color=self.colors[int(cls)],
-                                                    line_thickness=2)#改为3
+                                                    line_thickness=10)#改为3 line_thickness 为bbox的粗细大小
                         #plot_one_box(xyxy, showimg, label=label, color=colors[int(cls)], line_thickness=3)
 
 
