@@ -29,9 +29,10 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.init_slots()
        # self.cap = cv2.VideoCapture()
-        self.num_stop = 1 # 暂停与播放辅助信号，note：通过奇偶来控制暂停与播放
+        #self.num_stop = 1 # 暂停与播放辅助信号，note：通过奇偶来控制暂停与播放
         self.output_folder = 'output/'
         self.vid_writer = None
+        self.QtImg = None
 
 
         # 权重初始文件名
@@ -42,6 +43,8 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
 # 控件绑定相关操作
     def init_slots(self):
         self.ui.pushButton_img.clicked.connect(self.button_image_open)
+        self.ui.pushButton_download.clicked.connect(self.button_image_download)
+
         #self.textBrowser
 
     # 加载相关参数，并初始化模型
@@ -184,6 +187,19 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
 
                 #self.ui.label_old.setPixmap()
 
+    def button_image_download(self):
+        if self.QtImg:
+            print(self.QtImg);
+            fdir, ftype = QtWidgets.QFileDialog.getSaveFileName(self, "Save Image",
+                                                      "./", "Image Files (*.jpg)")
+            self.QtImg.save(fdir)
+            # 设置提示框
+            if fdir:
+                QtWidgets.QMessageBox.information(self, u"提示", u"下载完成，图片存放在"+fdir, buttons=QtWidgets.QMessageBox.Ok,
+                                              defaultButton=QtWidgets.QMessageBox.Ok)
+        else:
+            QtWidgets.QMessageBox.warning(self, u"警告", u"请先检测图片", buttons=QtWidgets.QMessageBox.Ok,
+                                          defaultButton=QtWidgets.QMessageBox.Ok);
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     current_ui = UI_Logic_Window()
