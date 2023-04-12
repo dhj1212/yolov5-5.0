@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1309</width>
-    <height>695</height>
+    <height>683</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -39,7 +39,7 @@
        </font>
       </property>
       <property name="text">
-       <string>欢迎使用物体识别系统</string>
+       <string>欢迎使用物体识别系统1</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -95,8 +95,7 @@
            <property name="styleSheet">
             <string notr="true">QLabel {
 	
-	background-color: rgb(255, 255, 255);
-	color: rgb(204, 204, 204);
+	background-color: rgb(247, 255, 155);
 }</string>
            </property>
            <property name="text">
