@@ -40,13 +40,21 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
         self.openfile_name_model="weights/best.pt"
 
         self.model_init()
+        self.center()
 # 控件绑定相关操作
     def init_slots(self):
         self.ui.pushButton_img.clicked.connect(self.button_image_open)
         self.ui.pushButton_download.clicked.connect(self.button_image_download)
 
         #self.textBrowser
-
+    #窗口居中
+    def center(self):
+        # 获取屏幕坐标
+        screen = QtWidgets.QDesktopWidget().screenGeometry();
+        size = self.geometry()
+        newleft=(screen.width() - size.width())/2
+        newtop = (screen.height() - size.height()) / 2
+        self.move(newleft,newtop)
     # 加载相关参数，并初始化模型
     def model_init(self):
         # 模型相关参数配置
@@ -189,7 +197,7 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
 
     def button_image_download(self):
         if self.QtImg:
-            print(self.QtImg);
+            #print(self.QtImg);
             fdir, ftype = QtWidgets.QFileDialog.getSaveFileName(self, "Save Image",
                                                       "./", "Image Files (*.jpg)")
             self.QtImg.save(fdir)
