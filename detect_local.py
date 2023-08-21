@@ -51,9 +51,10 @@ class UI_Logic_Window(QtWidgets.QMainWindow):
     def center(self):
         # 获取屏幕坐标
         screen = QtWidgets.QDesktopWidget().screenGeometry();
+        # 获取窗口尺寸
         size = self.geometry()
         newleft=(screen.width() - size.width())/2
-        newtop = (screen.height() - size.height()) / 2
+        newtop = (screen.height() - size.height() - 60) / 2
         self.move(newleft,newtop)
     # 加载相关参数，并初始化模型
     def model_init(self):
